@@ -66,11 +66,6 @@ dependencies {
     def powerMockVersion = '2.0.0-beta.5'
     def mockkVersion = '1.9.3'
 
-    // Fabric
-    def fabricCrashlyticsVersion = "2.9.5"
-
-    def newRelicVersion = "5.23.0"
-
     def jodaTimeVersion = "2.9.9"
 
     def autoValueVersion = "1.5"
@@ -126,7 +121,7 @@ dependencies {
     implementation "com.google.dagger:dagger:${daggerVersion}"
     implementation "com.google.dagger:dagger-android-support:${daggerVersion}"
     implementation "com.google.dagger:dagger-compiler:${daggerVersion}"
-    implementation "com.google.dagger:dagger-android-processor:${daggerVersion}"
+//    implementation "com.google.dagger:dagger-android-processor:${daggerVersion}"
 
     //Koin
     implementation "org.koin:koin-android:$koinVersion"
@@ -150,11 +145,6 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
     implementation "io.reactivex.rxjava2:rxandroid:${rxJavaAndroidVersion}"
     implementation "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}"
-
-    //Fabric
-    implementation dependencies.create("com.crashlytics.sdk.android:crashlytics:${fabricCrashlyticsVersion}@aar") {
-        transitive = true
-    }
 
     //Timber
     implementation "com.jakewharton.timber:timber:${timberVersion}"
@@ -181,25 +171,19 @@ dependencies {
     implementation "com.google.android.material:material:$materialVersion"
     implementation "net.danlew:android.joda:$jodaTimeVersion"
 
-    implementation "com.google.auto.value:auto-value:$autoValueVersion"
-    implementation "com.ryanharter.auto.value:auto-value-parcel:$autoValueParcelVersion"
-    implementation "com.ryanharter.auto.value:auto-value-gson:$autoValueGson"
+//    implementation "com.google.auto.value:auto-value:$autoValueVersion"
+//    implementation "com.ryanharter.auto.value:auto-value-parcel:$autoValueParcelVersion"
+//    implementation "com.ryanharter.auto.value:auto-value-gson:$autoValueGson"
 
     // Room
     implementation "androidx.room:room-runtime:$roomRuntimeVersion"
-    implementation "androidx.room:room-compiler:$roomRuntimeVersion"
 
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-livedata:$archLifecycleVersion"
 
     implementation "com.squareup:otto:$ottoVersion"
 
-    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
-    implementation "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
-
-
     implementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
-
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
