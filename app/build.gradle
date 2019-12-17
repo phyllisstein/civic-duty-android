@@ -5,12 +5,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 28
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "nyc.ignitelabs.civicduty"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -91,97 +91,97 @@ dependencies {
     implementation "androidx.cardview:cardview:${cardViewVersion}"
     implementation "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
 
-    implementation "androidx.multidex:multidex:${multidexVersion}"
+//    implementation "androidx.multidex:multidex:${multidexVersion}"
 
     // ViewModel and LiveData
-    implementation "androidx.lifecycle:lifecycle-extensions:${archLifecycleVersion}"
-    implementation "androidx.lifecycle:lifecycle-common-java8:${archLifecycleVersion}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${archLifecycleVersion}"
-    implementation "androidx.lifecycle:lifecycle-process:${archLifecycleVersion}"
+//    implementation "androidx.lifecycle:lifecycle-extensions:${archLifecycleVersion}"
+//    implementation "androidx.lifecycle:lifecycle-common-java8:${archLifecycleVersion}"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${archLifecycleVersion}"
+//    implementation "androidx.lifecycle:lifecycle-process:${archLifecycleVersion}"
 
-    // Recycler View
-    implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+//    // Recycler View
+//    implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+//
+//    implementation "androidx.fragment:fragment:${fragmentVersion}"
+//    implementation "androidx.browser:browser:${browserVersion}"
+//    implementation "androidx.core:core-ktx:${kotlinKtxVersion}"
+//
+//    // ReactiveStreams support for LiveData
+//    implementation "androidx.lifecycle:lifecycle-reactivestreams:${archLifecycleVersion}" // use -ktx for Kotlin
+//
+//    // Navigation Component
+//    implementation "androidx.navigation:navigation-fragment-ktx:${navigationVersion}"
+//    implementation "androidx.navigation:navigation-ui-ktx:${navigationVersion}"
+//
+//    //Guava is required for dagger, ideally should have been a transitive one but it isnt
+//    implementation "com.google.guava:guava:$guavaVersion"
+//
+//    //Dagger2
+//    implementation "com.google.dagger:dagger-android:${daggerVersion}"
+//    implementation "com.google.dagger:dagger:${daggerVersion}"
+//    implementation "com.google.dagger:dagger-android-support:${daggerVersion}"
+////    implementation "com.google.dagger:dagger-compiler:${daggerVersion}"
+////    implementation "com.google.dagger:dagger-android-processor:${daggerVersion}"
+//
+//    //Koin
+//    implementation "org.koin:koin-android:$koinVersion"
+//    implementation "org.koin:koin-androidx-scope:$koinVersion"
+//    implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
+//    implementation "org.koin:koin-test:$koinVersion"
+//
+//    //glide
+//    implementation "com.github.bumptech.glide:glide:${glideVersion}"
+////    implementation "com.github.bumptech.glide:compiler:$glideVersion"
+//
+//    //Coroutines
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}"
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutinesVersion}"
 
-    implementation "androidx.fragment:fragment:${fragmentVersion}"
-    implementation "androidx.browser:browser:${browserVersion}"
-    implementation "androidx.core:core-ktx:${kotlinKtxVersion}"
+//    //Okhttp3
+//    implementation "com.squareup.okhttp3:okhttp:${okhttp3Version}"
+//    implementation "com.squareup.okhttp3:mockwebserver:${okhttp3Version}"
 
-    // ReactiveStreams support for LiveData
-    implementation "androidx.lifecycle:lifecycle-reactivestreams:${archLifecycleVersion}" // use -ktx for Kotlin
-
-    // Navigation Component
-    implementation "androidx.navigation:navigation-fragment-ktx:${navigationVersion}"
-    implementation "androidx.navigation:navigation-ui-ktx:${navigationVersion}"
-
-    //Guava is required for dagger, ideally should have been a transitive one but it isnt
-    implementation "com.google.guava:guava:$guavaVersion"
-
-    //Dagger2
-    implementation "com.google.dagger:dagger-android:${daggerVersion}"
-    implementation "com.google.dagger:dagger:${daggerVersion}"
-    implementation "com.google.dagger:dagger-android-support:${daggerVersion}"
-    implementation "com.google.dagger:dagger-compiler:${daggerVersion}"
-//    implementation "com.google.dagger:dagger-android-processor:${daggerVersion}"
-
-    //Koin
-    implementation "org.koin:koin-android:$koinVersion"
-    implementation "org.koin:koin-androidx-scope:$koinVersion"
-    implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
-    implementation "org.koin:koin-test:$koinVersion"
-
-    //glide
-    implementation "com.github.bumptech.glide:glide:${glideVersion}"
-    implementation "com.github.bumptech.glide:compiler:$glideVersion"
-
-    //Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutinesVersion}"
-
-    //Okhttp3
-    implementation "com.squareup.okhttp3:okhttp:${okhttp3Version}"
-    implementation "com.squareup.okhttp3:mockwebserver:${okhttp3Version}"
-
-    //RxJava
-    implementation "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
-    implementation "io.reactivex.rxjava2:rxandroid:${rxJavaAndroidVersion}"
-    implementation "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}"
-
-    //Timber
-    implementation "com.jakewharton.timber:timber:${timberVersion}"
-
-    //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
-    implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
-    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${retrofitAdapterVersion}"
-
-
-    //Test resources
-    implementation "junit:junit:${junitVersion}"
-    implementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}"
-    implementation "android.arch.core:core-testing:${archCoreTestingVersion}"
-    implementation "android.arch.navigation:navigation-testing-ktx:${archNavigationTestVersion}"
-    implementation "org.mockito:mockito-core:$mockitoVersion"
-    implementation "org.powermock:powermock-module-junit4:$powerMockVersion"
-    implementation "org.powermock:powermock-api-mockito2:$powerMockVersion"
-    implementation "io.mockk:mockk:$mockkVersion"
-    implementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
-
-    // imported from other repos
-    implementation "com.google.android.material:material:$materialVersion"
-    implementation "net.danlew:android.joda:$jodaTimeVersion"
-
-//    implementation "com.google.auto.value:auto-value:$autoValueVersion"
-//    implementation "com.ryanharter.auto.value:auto-value-parcel:$autoValueParcelVersion"
-//    implementation "com.ryanharter.auto.value:auto-value-gson:$autoValueGson"
-
-    // Room
-    implementation "androidx.room:room-runtime:$roomRuntimeVersion"
-
-    // Lifecycle
-    implementation "androidx.lifecycle:lifecycle-livedata:$archLifecycleVersion"
-
-    implementation "com.squareup:otto:$ottoVersion"
+//    //RxJava
+//    implementation "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
+//    implementation "io.reactivex.rxjava2:rxandroid:${rxJavaAndroidVersion}"
+//    implementation "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}"
+//
+//    //Timber
+//    implementation "com.jakewharton.timber:timber:${timberVersion}"
+//
+//    //Retrofit
+//    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+//    implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+//    implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
+//    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${retrofitAdapterVersion}"
+//
+//
+//    //Test resources
+//    implementation "junit:junit:${junitVersion}"
+//    implementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}"
+//    implementation "android.arch.core:core-testing:${archCoreTestingVersion}"
+//    implementation "android.arch.navigation:navigation-testing-ktx:${archNavigationTestVersion}"
+//    implementation "org.mockito:mockito-core:$mockitoVersion"
+//    implementation "org.powermock:powermock-module-junit4:$powerMockVersion"
+//    implementation "org.powermock:powermock-api-mockito2:$powerMockVersion"
+//    implementation "io.mockk:mockk:$mockkVersion"
+//    implementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+//
+//    // imported from other repos
+//    implementation "com.google.android.material:material:$materialVersion"
+//    implementation "net.danlew:android.joda:$jodaTimeVersion"
+//
+////    implementation "com.google.auto.value:auto-value:$autoValueVersion"
+////    implementation "com.ryanharter.auto.value:auto-value-parcel:$autoValueParcelVersion"
+////    implementation "com.ryanharter.auto.value:auto-value-gson:$autoValueGson"
+//
+//    // Room
+//    implementation "androidx.room:room-runtime:$roomRuntimeVersion"
+//
+//    // Lifecycle
+//    implementation "androidx.lifecycle:lifecycle-livedata:$archLifecycleVersion"
+//
+//    implementation "com.squareup:otto:$ottoVersion"
 
     implementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
 
