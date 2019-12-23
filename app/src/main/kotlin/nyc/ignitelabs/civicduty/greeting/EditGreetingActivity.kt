@@ -16,12 +16,12 @@ class EditGreetingActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_edit_greeting)
 
-        vm.greeting.observe(this, Observer<String> {
+        vm.observeGreeting(this, Observer {
             greeting_input.text = Editable.Factory().newEditable(it)
         })
 
         done_button.setOnClickListener {
-            vm.greeting.value = greeting_input.text.toString()
+            vm.greeting = greeting_input.text.toString()
             finish()
         }
     }

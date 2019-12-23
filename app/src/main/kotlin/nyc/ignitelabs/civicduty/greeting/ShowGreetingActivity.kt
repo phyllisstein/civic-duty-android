@@ -15,8 +15,8 @@ class ShowGreetingActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_show_greeting)
 
-        vm.greeting.value = greeting_text.text.toString()
-        vm.greeting.observe(this, Observer<String> {
+        vm.greeting = greeting_text.text.toString()
+        vm.observeGreeting(this, Observer {
             greeting_text.text = it
         })
 
