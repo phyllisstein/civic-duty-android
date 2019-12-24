@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 
 class GreetingViewModel : ViewModel() {
-    private val _greeting: MutableLiveData<String> by lazy { MutableLiveData() }
+    private val _greeting: MutableLiveData<String> by lazy { MutableLiveData<String>() }
 
     var greeting: String?
         get() = _greeting.value

@@ -30,12 +30,22 @@ android {
             all { useJUnitPlatform() }
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+androidExtensions {
+    experimental = true
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    def appCompatVersion = '1.2.0-alpha01' // do not update until https://issuetracker.google.com/issues/141132133 has been fixed
+    // do not update until https://issuetracker.google.com/issues/141132133 has been fixed
+    def appCompatVersion = '1.2.0-alpha01'
     def cardViewVersion = '1.0.0'
     def constraintLayoutVersion = '1.1.3'
     def leakCanaryVersion = '2.0'
@@ -46,6 +56,7 @@ dependencies {
     implementation "androidx.cardview:cardview:${cardViewVersion}"
     implementation "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
     implementation 'androidx.fragment:fragment-ktx:1.2.0-rc04'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "androidx.lifecycle:lifecycle-common-java8:${archLifecycleVersion}"
     implementation "androidx.lifecycle:lifecycle-extensions:${archLifecycleVersion}"
     implementation "androidx.lifecycle:lifecycle-process:${archLifecycleVersion}"
@@ -53,6 +64,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}"
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect'
 
     kapt 'com.android.databinding:compiler:3.4.2'
 
@@ -60,7 +72,7 @@ dependencies {
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit5'
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
     testImplementation 'org.mockito:mockito-core:3.2.4'
-    testImplementation "android.arch.core:core-testing:1.1.1"
+    testImplementation 'android.arch.core:core-testing:1.1.1'
 
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
