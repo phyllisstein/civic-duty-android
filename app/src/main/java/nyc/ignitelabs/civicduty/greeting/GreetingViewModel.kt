@@ -1,9 +1,6 @@
 package nyc.ignitelabs.civicduty.greeting
 
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 
 class GreetingViewModel : ViewModel() {
     private val _greeting: MutableLiveData<String> by lazy { MutableLiveData<String>() }

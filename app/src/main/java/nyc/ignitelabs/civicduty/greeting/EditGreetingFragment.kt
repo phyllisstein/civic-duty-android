@@ -2,9 +2,7 @@ package nyc.ignitelabs.civicduty.greeting
 
 import android.os.Bundle
 import android.text.Editable
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -14,7 +12,8 @@ import nyc.ignitelabs.civicduty.R
 class EditGreetingFragment : Fragment() {
     private val vm: GreetingViewModel by activityViewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_edit_greeting, container, false)
     }
 

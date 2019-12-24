@@ -6,7 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_greeting.*
 import nyc.ignitelabs.civicduty.R
 
-class GreetingActivity : AppCompatActivity(), ShowGreetingFragment.OnEditGreetingListener {
+class GreetingActivity : AppCompatActivity(),
+    ShowGreetingFragment.OnEditGreetingListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
