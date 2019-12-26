@@ -1,13 +1,15 @@
 package nyc.ignitelabs.civicduty.greeting
 
 import android.os.Bundle
-import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_greeting.*
 import nyc.ignitelabs.civicduty.R
 
-class GreetingActivity : AppCompatActivity(),
-    ShowGreetingFragment.OnEditGreetingListener {
+class GreetingActivity : AppCompatActivity() {
+    private val vm: GreetingViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -17,19 +19,31 @@ class GreetingActivity : AppCompatActivity(),
             return
         }
 
-        val showFragment = ShowGreetingFragment()
-        supportFragmentManager.beginTransaction().apply {
-            add(activity_greeting.id, showFragment)
-            commit()
-        }
+        vm.showEditFragment.observe(this, Observer {
+            if (it) {
+                editGreeting()
+            } else {
+                showGreeting()
+            }
+        })
     }
 
-    override fun onEditGreeting(v: View) {
+    private fun editGreeting() {
         val editFragment = EditGreetingFragment()
         supportFragmentManager.beginTransaction().apply {
             replace(activity_greeting.id, editFragment)
             addToBackStack(null)
             commit()
         }
+    }
+
+    private fun showGreeting() {
+        val showFragment = ShowGreetingFragment()
+        supportFragmentManager.beginTransaction().apply {
+            replace(activity_greeting.id, showFragment)
+            addToBackStack(null)
+            commit()
+        }
+
     }
 }

@@ -28,7 +28,7 @@ class EditGreetingFragment : Fragment() {
 
         done_button.setOnClickListener {
             vm.setGreeting(greeting_input.text.toString())
-            activity?.onBackPressed()
+            vm.toggleEditFragment()
         }
     }
 }
