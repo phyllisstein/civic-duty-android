@@ -2,7 +2,9 @@ package nyc.ignitelabs.civicduty.greeting
 
 import android.os.Bundle
 import android.text.Editable
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -20,12 +22,12 @@ class EditGreetingFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        vm.observeGreeting(this, Observer {
+        vm.greeting.observe(this, Observer {
             greeting_input.text = Editable.Factory().newEditable(it)
         })
 
         done_button.setOnClickListener {
-            vm.greeting = greeting_input.text.toString()
+            vm.setGreeting(greeting_input.text.toString())
             activity?.onBackPressed()
         }
     }

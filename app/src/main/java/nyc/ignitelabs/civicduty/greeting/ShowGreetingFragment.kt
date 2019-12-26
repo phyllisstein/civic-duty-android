@@ -2,7 +2,9 @@ package nyc.ignitelabs.civicduty.greeting
 
 import android.content.Context
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -33,11 +35,11 @@ class ShowGreetingFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        if (vm.greeting == null) {
-            vm.greeting = greeting_text.text.toString()
+        if (vm.greeting.value == null) {
+            vm.setGreeting(greeting_text.text.toString())
         }
 
-        vm.observeGreeting(this, Observer {
+        vm.greeting.observe(this, Observer {
             greeting_text.text = it
         })
 
